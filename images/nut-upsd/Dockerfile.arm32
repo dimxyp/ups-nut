@@ -10,8 +10,16 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 
 ARG NUT_VERSION=2.7.4-r10
 ENV API_USER=upsmon \
+    API_PASSWORD= \
     DESCRIPTION=UPS \
     DRIVER=usbhid-ups \
+    SUBDRIVER= \
+    PROTOCOL= \
+    PRODUCT= \
+    LANGID_FIX= \
+    NORATING= \
+    NOVENDOR= \
+    OVERRIDE_BATTERY_PACKS= \
     GROUP=nut \
     NAME=ups \
     POLLINTERVAL= \
@@ -21,7 +29,8 @@ ENV API_USER=upsmon \
     SERIAL= \
     SERVER=master \
     USER=nut \
-    VENDORID=
+    VENDORID= \
+    PRODUCTID=
 
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' \
       >>/etc/apk/repositories && \

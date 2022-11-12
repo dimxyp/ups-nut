@@ -17,6 +17,27 @@ if [ ! -e /etc/nut/.setup ]; then
         port = $PORT
         desc = "$DESCRIPTION"
 EOF
+    if [ ! -z "$SUBDRIVER" ]; then
+      echo "        subdriver = \"$SUBDRIVER\"" >> /etc/nut/ups.conf
+    fi
+    if [ ! -z "$PROTOCOL" ]; then
+      echo "        protocol = \"$PROTOCOL\"" >> /etc/nut/ups.conf
+    fi
+    if [ ! -z "$PRODUCT" ]; then
+      echo "        product = \"$PRODUCT\"" >> /etc/nut/ups.conf
+    fi
+    if [ ! -z "$LANGID_FIX" ]; then
+      echo "        langid_fix = \"$LANGID_FIX\"" >> /etc/nut/ups.conf
+    fi
+    if [ "$NORATING" = true ]; then
+      echo "        norating" >> /etc/nut/ups.conf
+    fi
+    if [ "$NOVENDOR" = true ]; then
+      echo "        novendor" >> /etc/nut/ups.conf
+    fi
+    if [ ! -z "$OVERRIDE_BATTERY_PACKS" ]; then
+      echo "        override.battery.packs = \"$OVERRIDE_BATTERY_PACKS\"" >> /etc/nut/ups.conf
+    fi
     if [ ! -z "$SERIAL" ]; then
       echo "        serial = \"$SERIAL\"" >> /etc/nut/ups.conf
     fi
@@ -25,6 +46,9 @@ EOF
     fi
     if [ ! -z "$VENDORID" ]; then
       echo "        vendorid = $VENDORID" >> /etc/nut/ups.conf
+    fi
+    if [ ! -z "$PRODUCTID" ]; then
+      echo "        productid = \"$PRODUCTID\"" >> /etc/nut/ups.conf
     fi
     if [ ! -z "$SDORDER" ]; then
       echo "        sdorder = $SDORDER" >> /etc/nut/ups.conf

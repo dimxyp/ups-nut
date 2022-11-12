@@ -12,6 +12,13 @@ ENV API_USER=upsmon \
     API_PASSWORD= \
     DESCRIPTION=UPS \
     DRIVER=usbhid-ups \
+    SUBDRIVER= \
+    PROTOCOL= \
+    PRODUCT= \
+    LANGID_FIX= \
+    NORATING= \
+    NOVENDOR= \
+    OVERRIDE_BATTERY_PACKS= \
     GROUP=nut \
     NAME=ups \
     POLLINTERVAL= \
@@ -21,7 +28,8 @@ ENV API_USER=upsmon \
     SERIAL= \
     SERVER=master \
     USER=nut \
-    VENDORID=
+    VENDORID= \
+    PRODUCTID=
 HEALTHCHECK CMD upsc ups@localhost:3493 2>&1|grep -q stale && exit 1 || true
 
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/community' \
