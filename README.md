@@ -4,7 +4,7 @@ The following tutorial depicts my adventure in making a [Megatec protocol](https
 
 ![UPS Home Assistant](https://i.imgur.com/KgP4tDF.png=250x250)
 
-I bought a cheap UPS in Portugal from a lesser known brand called "Eurotech", it came with some an installation cd with a program called UPSmart which only works when it is plugged to a computer running windows:
+I bought a cheap UPS in Portugal from a lesser known brand called "Eurotech", it came with some installation cd with a program called UPSmart which only works when it is plugged to a computer running windows:
 
 <p float="left">
   <img src="https://i.imgur.com/1ApNwFm.jpg" width=45% height=45%>
