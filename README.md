@@ -97,6 +97,30 @@ pollinterval=1
     novendor
     langid_fix = "0x0409"
     override.battery.packs = 1
+
+
+
+
+my RSD config work:
+
+root@dimxrsd:~# cat /etc/nut/ups.conf
+maxretry=3
+pollinterval=1
+
+[downups]
+        driver="nutdrv_qx"
+        subdriver="hunnox"
+        desc="PowerCool 1200"
+        port="auto"
+        vendorid="0001"
+        productid="0000"
+        bus="001"
+        protocol="hunnox"
+        langid_fix=0x0409
+        novendor
+        norating
+        noscanlangid
+
 ```
 Your main challenge will be finding out which combination of configurations will work for you. Mine was a result of checking the [open issues](https://github.com/networkupstools/nut/issues?q=is%3Aissue+is%3Aopen+fry%27s+electronics) and the [driver documentation](https://networkupstools.org/docs/man/) for drivers like [blazer_ser](https://networkupstools.org/docs/man/blazer_ser.html), [blazer_usb](https://networkupstools.org/docs/man/blazer_usb.html), [nut_atcl_usb](https://networkupstools.org/docs/man/nutdrv_atcl_usb.html) or [nutdrv_qx](https://networkupstools.org/docs/man/nutdrv_qx.html) and checking their subdrivers, protocols and langid_fixes. **Don't ask me directly what will work in your UPS, it will be your own adventure.**
 
